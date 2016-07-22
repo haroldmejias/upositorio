@@ -15,8 +15,8 @@ $telegram->sendMessage($content);
 
 
 function processMessage($msg) {
-	$total=file_get_contents("http://www.hmejias.cf/BOT/dinero.txt");
-	$fmovimientos=file_get_contents("http://www.hmejias.cf/BOT/movimientos.txt");
+	$dinero=file_get_contents("http://www.hmejias.cf/BOT/dinero.txt");
+	// $fmovimientos=file_get_contents("http://www.hmejias.cf/BOT/movimientos.txt");
 	if($msg{0} == '/') {
 		$c = explode(' ', $msg);
 		switch(strtolower(trim($c[0]))) {
@@ -32,7 +32,10 @@ function processMessage($msg) {
 				if (isset($c[1])){
 				$total = $dinero + $c[1];
 				$text=$total;
-				$cont = $c[2];
+				if (isset($c[2]))
+					$cont = $c[2];
+				else 
+					$cont="";
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$m}&c={$cont}");
 				}
 				else{
