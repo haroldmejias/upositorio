@@ -36,7 +36,7 @@ function processMessage($msg) {
 					$cont = $c[2];
 				else 
 					$cont="";
-				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$m}&c={$cont}");
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$total}&c={$cont}");
 				}
 				else{
 				$text="fuck you";	
