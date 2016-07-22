@@ -36,7 +36,7 @@ function processMessage($msg) {
 				if (isset($c[2]))
 					$cont = $c[2];
 				else 
-					$cont="";
+					$cont="sinConcepto";
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}");
 				}
 				else{
@@ -52,7 +52,7 @@ function processMessage($msg) {
 				if (isset($c[2]))
 					$cont = $c[2];
 				else 
-					$cont="";
+					$cont="siConcepto";
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}");
 				}
 				else{
