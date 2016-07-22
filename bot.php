@@ -32,11 +32,12 @@ function processMessage($msg) {
 				if (isset($c[1])){
 				$total = $dinero + $c[1];
 				$text=$total;
+				$m=$c[1];
 				if (isset($c[2]))
 					$cont = $c[2];
 				else 
 					$cont="";
-				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$total}&c={$cont}");
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}");
 				}
 				else{
 				$text="fuck you";	
@@ -47,11 +48,12 @@ function processMessage($msg) {
 				if (isset($c[1])){
 				$total = $dinero - $c[1];
 				$text=$total;
+				$m=$c[1];
 				if (isset($c[2]))
 					$cont = $c[2];
 				else 
 					$cont="";
-				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$total}&c={$cont}");
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}");
 				}
 				else{
 				$text="fuck you";	
