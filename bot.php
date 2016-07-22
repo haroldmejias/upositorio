@@ -13,7 +13,10 @@ $response = processMessage($result["message"]["text"]);
 $content = array('chat_id' => $result["message"]["chat"]["id"], 'text' => $response, "parse_mode" => 'html');
 $telegram->sendMessage($content);
 
+
 function processMessage($msg) {
+	$total=get_file_contents("http://www.hmejias.cf/BOT/dinero.txt");
+	$fmovimientos=get_file_contents("http://www.hmejias.cf/BOT/movimientos.txt");
 	if($msg{0} == '/') {
 		$c = explode(' ', $msg);
 		switch(strtolower(trim($c[0]))) {
@@ -22,7 +25,18 @@ function processMessage($msg) {
 				return $text;
 				break;
 			case '/help':
-				$text = "No help for you, mortal";
+				$text ="FUCK you, mortal";
+				return $text;
+				break;
+			case "/s":
+				if (isset($c[1])){
+				$total = $dinero + $c[1];
+				$text=$total;
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$m}&c={$c[2]}");
+				}
+				else{
+				$text="fuck you";	
+				}
 				return $text;
 				break;
 			default:
