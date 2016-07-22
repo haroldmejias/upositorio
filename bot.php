@@ -15,8 +15,8 @@ $telegram->sendMessage($content);
 
 
 function processMessage($msg) {
-	$total=get_file_contents("http://www.hmejias.cf/BOT/dinero.txt");
-	$fmovimientos=get_file_contents("http://www.hmejias.cf/BOT/movimientos.txt");
+	$total=file_get_contents("http://www.hmejias.cf/BOT/dinero.txt");
+	$fmovimientos=file_get_contents("http://www.hmejias.cf/BOT/movimientos.txt");
 	if($msg{0} == '/') {
 		$c = explode(' ', $msg);
 		switch(strtolower(trim($c[0]))) {
