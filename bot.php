@@ -32,7 +32,8 @@ function processMessage($msg) {
 				if (isset($c[1])){
 				$total = $dinero + $c[1];
 				$text=$total;
-				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$m}&c={$c[2]}");
+				$cont = $c[2];
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$m}&c={$cont}");
 				}
 				else{
 				$text="fuck you";	
