@@ -43,6 +43,21 @@ function processMessage($msg) {
 				}
 				return $text;
 				break;
+			case "/r":
+				if (isset($c[1])){
+				$total = $dinero - $c[1];
+				$text=$total;
+				if (isset($c[2]))
+					$cont = $c[2];
+				else 
+					$cont="";
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?m={$total}&c={$cont}");
+				}
+				else{
+				$text="fuck you";	
+				}
+				return $text;
+				break;
 			default:
 				$text = "You speak gibberish, the is no such command";
 				return $text;
