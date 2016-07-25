@@ -52,7 +52,7 @@ function processMessage($msg) {
 				if (isset($c[2]))
 					$cont = $c[2];
 				else 
-					$cont="siConcepto";
+					$cont="sinConcepto";
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}");
 				}
 				else{
@@ -61,7 +61,7 @@ function processMessage($msg) {
 				return $text;
 				break;
 			case "/d":
-				$dinero=$total;
+				$text=$dinero;
 				return $text;
 				break;
 			default:
