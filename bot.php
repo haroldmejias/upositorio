@@ -60,6 +60,10 @@ function processMessage($msg) {
 				}
 				return $text;
 				break;
+			case "/d":
+				$dinero=$total;
+				return $text;
+				break;
 			default:
 				$text = "You speak gibberish, the is no such command";
 				return $text;
