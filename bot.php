@@ -33,8 +33,11 @@ function processMessage($msg) {
 				$total = $dinero + $c[1];
 				$text=$total;
 				$m=$c[1];
-				if (isset($c[2]))
-					$cont = $c[2];
+				if (isset($c[2])){
+					unset($c[0]);
+					unset($c[1]);
+					$cont=implode(" ", $c); 
+				}
 				else 
 					$cont="sinConcepto";
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}&d=1");
