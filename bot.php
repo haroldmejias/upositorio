@@ -37,6 +37,7 @@ function processMessage($msg) {
 					unset($c[0]);
 					unset($c[1]);
 					$cont=implode(" ", $c); 
+					$cont=urlencode($cont);
 				}
 				else 
 					$cont="sinConcepto";
