@@ -54,7 +54,10 @@ function processMessage($msg) {
 				$text=$total;
 				$m=$c[1];
 				if (isset($c[2]))
-					$cont = $c[2];
+					unset($c[0]);
+					unset($c[1]);
+					$cont=implode(" ", $c); 
+					$cont=urlencode($cont);
 				else 
 					$cont="sinConcepto";
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}&d=2");
