@@ -37,7 +37,7 @@ function processMessage($msg) {
 					$cont = $c[2];
 				else 
 					$cont="sinConcepto";
-				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}");
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}&d=1");
 				}
 				else{
 				$text="fuck you";	
@@ -53,7 +53,7 @@ function processMessage($msg) {
 					$cont = $c[2];
 				else 
 					$cont="sinConcepto";
-				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}");
+				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}&d=2");
 				}
 				else{
 				$text="fuck you";	
