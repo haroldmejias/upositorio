@@ -8,12 +8,9 @@ $result = $telegram->getData();
 // $chat_id = $result["message"] ["chat"]["id"];
 // $content = array('chat_id' => $chat_id, 'text' => "Test");
 // $telegram->sendMessage($content);
-
 $response = processMessage($result["message"]["text"]);
 $content = array('chat_id' => $result["message"]["chat"]["id"], 'text' => $response, "parse_mode" => 'html');
 $telegram->sendMessage($content);
-
-
 function processMessage($msg) {
 	$dinero=file_get_contents("http://www.hmejias.cf/BOT/dinero.txt");
 	// $fmovimientos=file_get_contents("http://www.hmejias.cf/BOT/movimientos.txt");
@@ -53,13 +50,16 @@ function processMessage($msg) {
 				$total = $dinero - $c[1];
 				$text=$total;
 				$m=$c[1];
-				if (isset($c[2]))
+				if (isset($c[2])){
 					unset($c[0]);
 					unset($c[1]);
 					$cont=implode(" ", $c); 
 					$cont=urlencode($cont);
-				else 
-					$cont="sinConcepto";
+				}
+				else{ 
+					$cont="Sin Concepto";
+					$cont=urldecode($cont);
+				}
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}&d=2");
 				}
 				else{
@@ -82,5 +82,4 @@ function processMessage($msg) {
 		return $text;
 	}		
 }
-
 ?>
