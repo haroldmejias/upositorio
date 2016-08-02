@@ -37,8 +37,8 @@ function processMessage($msg) {
 					$cont=urlencode($cont);
 				}
 				else{ 
-					$co="Sin Concepto";
-					$cont=urldecode($co);
+					$cont="SinConcepto";
+					
 				}
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}&d=1");
 				}
@@ -59,8 +59,7 @@ function processMessage($msg) {
 					$cont=urlencode($cont);
 				}
 				else{ 
-					$cont="Sin Concepto";
-					$cont=urldecode($cont);
+					$cont="SinConcepto";
 				}
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=r&m={$m}&d=2");
 				}
