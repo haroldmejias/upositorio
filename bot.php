@@ -36,9 +36,10 @@ function processMessage($msg) {
 					$cont=implode(" ", $c); 
 					$cont=urlencode($cont);
 				}
-				else 
-					$cont="sinConcepto";
+				else{ 
+					$cont="Sin Concepto";
 					$cont=urldecode($cont);
+				}
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}&d=1");
 				}
 				else{
