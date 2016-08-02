@@ -37,8 +37,8 @@ function processMessage($msg) {
 					$cont=urlencode($cont);
 				}
 				else{ 
-					$cont="Sin Concepto";
-					$cont=urldecode($cont);
+					$co="Sin Concepto";
+					$cont=urldecode($co);
 				}
 				file_get_contents("http://www.hmejias.cf/BOT/script.php?t={$total}&c={$cont}&o=s&m={$m}&d=1");
 				}
